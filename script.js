@@ -10,6 +10,29 @@ mainBtn.addEventListener('click',()=>{
     feature.scrollIntoView({behavior:'smooth'})
 })
 
+//close modal function
+function toCloseModal(){
+    modal.classList.add('hidden')
+    overlay.classList.add('hidden')
+}
+
+//open modal
 openAccount.addEventListener('click',()=>{
-    
+    modal.classList.remove('hidden')
+    overlay.classList.remove('hidden')
+})
+
+//close modal event handler
+closeModal.addEventListener('click',()=>{
+    toCloseModal()
+})
+
+overlay.addEventListener('click', ()=>{
+    toCloseModal()
+})
+
+document.addEventListener('keydown',(e)=>{
+    if(e.key === 'Escape' && !modal.classList.contains('hidden')){
+        toCloseModal()
+    }
 })
