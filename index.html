@@ -16,16 +16,38 @@
                 <li class="header-list-item"><a href="" class="header-list-item-link">Features</a></li>
                 <li class="header-list-item"><a href="" class="header-list-item-link">Operations</a></li>
                 <li class="header-list-item"><a href="" class="header-list-item-link">Testimonials</a></li>
-                <li class="header-list-item"><button class="header-list-item-btn">Open account</button></li>
+                <li class="header-list-item"><button class="header-list-item-btn btn">Open account</button></li>
             </ul>
         </nav>
     </header>
 
+    <!-- form -->
+    <div class="modal hidden">
+        <button class="btn-close-modal">&times;</button>
+        <h4 class="form-heading">Open your bank account in just <span class="skew">5 minutes</span></h4>
+        <form action="">
+            <label for="">First Name</label>
+            <input type="text">
+            <label for="">Last Name</label>
+            <input type="text">
+            <label for="">Email</label>
+            <input type="email">
+        </form>
+        <div class="form-btn-con">
+            <button class="btn btn-modal-next">Next step &rarr;</button>
+        </div>
+    </div>
+
+    <!-- overlay -->
+    <div class="overlay hidden">
+
+    </div>
+
     <main class="main">
         <div class="main-left">
-            <h1 class="main-heading">When <span class="main-emphasis">banking</span> meets <span class="main-emphasis">minimalist</span></h1>
+            <h1 class="main-heading">When <span class="main-emphasis skew">banking</span> meets <span class="main-emphasis skew">minimalist</span></h1>
             <p class="main-paragraph">A simpler banking experience for a simple life</p>
-            <button class="main-btn">learn more &rarr;</button>
+            <button class="main-btn">learn more &darr;</button>
         </div>
 
         <div class="main-image-con">
@@ -33,7 +55,7 @@
         </div>
     </main>
 
-    <section class="feature">
+    <section class="feature" id="feature">
         <div class="feature-title-con title-con">
             <h2 class="feature-span">Features</h2>
         <h3 class="feature-heading">Everything you need in a modern bank and more.</h3>
@@ -129,6 +151,27 @@
         </div>
         <div class="dot"></div>
     </section>
+
+    <section class="toaction">
+        <p>The best day to join Bankist was one year ago. The second best is today!</p>
+        <button class="btn btn-toaction">Open your acount today!</button>
+    </section>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Terms of use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <img src="img/icon.png" alt="icon" class="footer-icon">
+        <p>Developed by <span class="developer">S-Abdullahi</span></p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
