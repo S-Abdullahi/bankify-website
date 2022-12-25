@@ -13,10 +13,10 @@
         <img src="img/logo.png" alt="logo" class="header-logo">
         <nav class="header-nav">
             <ul class="header-list">
-                <li class="header-list-item"><a href="" class="header-list-item-link">Features</a></li>
-                <li class="header-list-item"><a href="" class="header-list-item-link">Operations</a></li>
-                <li class="header-list-item"><a href="" class="header-list-item-link">Testimonials</a></li>
-                <li class="header-list-item"><button class="header-list-item-btn btn">Open account</button></li>
+                <li class="nav-item"><a href="#feature" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="#operations" class="nav-link">Operations</a></li>
+                <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li class="nav-item"><button class="header-list-item-btn btn">Open account</button></li>
             </ul>
         </nav>
     </header>
@@ -97,29 +97,47 @@
         </div>
     </section>
 
-    <section class="operations">
+    <section class="operations" id="operations">
         <div class="operations-title-con title-con">
             <h2 class="operations-span">operations</h2>
             <h3 class="operations-heading">Everything as simple as possible, but no simpler.</h3>
         </div>
 
         <div class="operations-detail">
-            <div class="operations-detail-con">
+            <div class="operations-detail-con operation-content-1 operations-detail-active">
                 <i class="fa-solid fa-arrow-up-from-bracket operations-icon"></i>
                 <div class="operations-description-con">
                     <h5 class="operations-description-title">Transfer money to anyone, instantly! No fees, no BS.</h5>
                     <p class="operations-description description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
+        
+            </div>
+
+            <div class="operations-detail-con operation-content-2">
+                <i class="fa-sharp fa-solid fa-landmark operations-icon"></i>
+                <div class="operations-description-con">
+                    <h5 class="operations-description-title">Buy a home or make your dreams come true, with instant loans.</h5>
+                    <p class="operations-description description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+
+            <div class="operations-detail-con operation-content-3">
+                <i class="fa-solid fa-person-circle-xmark operations-icon"></i>
+                <div class="operations-description-con">
+                    <h5 class="operations-description-title">No longer need your account? No problem! Close it instantly.</h5>
+                    <p class="operations-description description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+        
             </div>
             <div class="operations-btn-con">
-                <button class="operations-btn btn-01"><span class="operation-number">01</span> Instant Transfer</button>
-                <button class="operations-btn btn-02"><span class="operation-number">02</span> Instant Loans</button>
-                <button class="operations-btn btn-03"><span class="operation-number">03</span> Instant Closing</button>
+                <button class="operations-btn btn-01" data-tab="1"><span class="operation-number">01</span> Instant Transfer</button>
+                <button class="operations-btn btn-02" data-tab="2"><span class="operation-number">02</span> Instant Loans</button>
+                <button class="operations-btn btn-03" data-tab="3"><span class="operation-number">03</span> Instant Closing</button>
             </div>
         </div>
     </section>
 
-    <section class="testimonial">
+    <section class="testimonial" id="testimonials">
         <div class="testimonial-con title-con">
             <h2>not sure yet?</h2>
             <h3>Millions of Bankists are already making their lifes simpler.</h3>

@@ -171,9 +171,9 @@ label{
     backdrop-filter: blur(3px);
     transition: all 0.5s;
 }
+
 /******HEADER*****/
 .header{
-    /* background-color: red; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -185,19 +185,17 @@ label{
 }
 
 .header-list{
-    /* background-color: green; */
     display: flex;
     gap: 4rem;
     align-items: center;
     font-size: 1rem;
-    /* margin-right: 3rem; */
 }
 
-.header-list-item{
+.nav-item{
     list-style-type: none;
 }
 
-.header-list-item-link{
+.nav-link{
     text-decoration: none;
     color: var(--text-primary);
 }
@@ -206,7 +204,6 @@ label{
 
 /******MAIN******/
 .main{
-    /* background-color: red; */
     height: 90vh;
     display: flex;
     padding: 4rem 10rem;
@@ -232,7 +229,6 @@ label{
     border: 0;
     background-color: var(--bg-color);
     padding: 1rem;
-    /* padding-bottom: 0.2rem; */
     color: var(--accent-color-light);
     border-bottom: solid 1px var(--accent-color-light);
     cursor: pointer;
@@ -241,44 +237,14 @@ label{
 .main-btn:hover{
     color: var(--text-primary);
     background-color: var(--accent-color-light);
-    /* padding: 1rem; */
-
 }
 
 .main-image-con{
     height: 75%;
     width: 50%;
-    /* background-color: green; */
 }
 .main-image{
     height:100%;
-}
-
-/* FEATURES */
-.feature, .operations{
-    /* padding:8rem 10rem;
-    border-bottom: var(--main-border-bottom) */
-}
-
-.feature-title-con, .operations-title-con{
-    /* background-color: red; */
-    /* margin-left: 50%;
-    margin-bottom: 4rem;
-    width: 70%;
-    transform: translateX(-50%); */
-}
-
-.feature-span, .operations-span{
-    /* text-transform: uppercase;
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--accent-color-light); */
-}
-
-.feature-heading, .operations-heading{
-    /* font-size:1.9rem;
-    font-weight: 500;
-    color: var(--text-primary); */
 }
 
 .feature-item{
@@ -341,6 +307,7 @@ label{
 .operations-title-con{
     margin-bottom: 6rem;
 }
+
 .operations-detail{
     background-color: white;
     padding: 6rem 6rem 6rem 4rem;
@@ -351,11 +318,14 @@ label{
 }
 
 .operations-detail-con{
-    display: flex;
+    display: none;
 }
 
 .operations-description-con{
-    margin-left: 2rem;
+    margin-left: 3rem;
+    padding-right: 6rem;
+    font-size: 1rem;
+    line-height: 1.7rem;
 }
 
 .operations-icon{
@@ -392,6 +362,7 @@ label{
     border-radius: 5rem;
     margin:0 0.5rem;
     cursor: pointer;
+    transition: all 0.3s;
     /* letter-spacing: 0.05rem; */
     /* flex-grow: 1; */
 }
@@ -552,4 +523,13 @@ footer p span{
 .hidden{
     visibility: hidden;
     opacity: 0;
+}
+
+.operations-detail-active{
+    display: flex;
+}
+
+.operation-btn-active{
+    transform: translateY(-30%);
+    transition: all 0.3s;
 }
