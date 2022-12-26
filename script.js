@@ -1,3 +1,4 @@
+const navCon = document.querySelector('.header')
 const mainBtn = document.querySelector('.main-btn')
 const feature = document.querySelector('#feature')
 const openAccount = document.querySelector('.header-list-item-btn')
@@ -52,7 +53,7 @@ document.querySelector('.header-list').addEventListener('click', (e)=>{
 //operations functinalities
 operationTabsCon.addEventListener('click', (e)=>{
     const clicked = e.target.closest('.operations-btn')
-
+    if(!clicked) return
     //deactivating button
     operationsTabs.forEach((tab)=>{
         tab.classList.remove('operation-btn-active')
@@ -61,10 +62,32 @@ operationTabsCon.addEventListener('click', (e)=>{
         content.classList.remove('operations-detail-active')
     })
 
-    if(!clicked) return
+    
     //activating button
     clicked.classList.add('operation-btn-active')
     document.querySelector(`.operation-content-${clicked.dataset.tab}`).classList.add('operations-detail-active')
+})
+
+//hover effect on navigation
+function handleHoverEffect(e, opacity){
+    if(e.target.classList.contains('nav-link')){
+        const link = e.target
+        const siblings = link.closest('.header').querySelectorAll('.nav-link')
+        const logo = link.closest('.header').querySelector('img')
+
+        siblings.forEach((item)=>{
+            if(item !== link) item.style.opacity = opacity
+        })
+        logo.style.opacity = opacity
+    }
+}
+
+navCon.addEventListener('mouseover',function(e){
+    handleHoverEffect(e,0.5)
+})
+
+navCon.addEventListener('mouseout', function(e){
+    handleHoverEffect(e,1)
 })
 
 
