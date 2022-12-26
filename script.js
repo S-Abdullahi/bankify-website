@@ -6,6 +6,7 @@ const closeModal = document.querySelector('.btn-close-modal')
 const operationTabsCon = document.querySelector('.operations-btn-con')
 const operationsTabs = document.querySelectorAll('.operations-btn')
 const operationContent = document.querySelectorAll('.operations-detail-con')
+const header = document.querySelector('.header')
 
 const modal = document.querySelector('.modal')
 const overlay = document.querySelector('.overlay')
@@ -90,6 +91,49 @@ navCon.addEventListener('mouseout', function(e){
     handleHoverEffect(e,1)
 })
 
+//sticky header
+// const stickyStart = feature.getBoundingClientRect()
+// window.addEventListener('scroll',()=>{
+//     if(scrollY > stickyStart.top){header.classList.add('sticky')} 
+//     else{
+//         header.classList.remove('sticky')
+//     }
+// })
+const main = document.querySelector('.main')
+const headerHeight = header.getBoundingClientRect().height
+const stickyNav = function(entries){
+    const [entry] = entries
+    if(!entry.isIntersecting){
+        header.classList.add('sticky')
+    } else{
+        header.classList.remove('sticky')
+    }
+}
+const headerObserver = new IntersectionObserver(stickyNav, {
+    root: null,
+    threshold: 0,
+    rootMargin: `-${headerHeight}px`
+})
+headerObserver.observe(main)
 
 
+//reveal sections
+function revealSection(entries, observer){
+    const [entry] = entries
+
+    if(!entry.isIntersecting) return;
+    entry.target.classList.remove('section-hidden')
+    observer.unobserve(entry.target)
+}
+
+const sectionAll = document.querySelectorAll('section')
+const sectionObserver = new IntersectionObserver(revealSection, {
+    root: null,
+    threshold: 0.15
+})
+
+sectionAll.forEach((section)=>{
+    sectionObserver.observe(section)
+    section.classList.add('section-hidden')
+})
 

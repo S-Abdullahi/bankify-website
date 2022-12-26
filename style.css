@@ -76,7 +76,8 @@ h5{
 
 section{
     padding:8rem 10rem;
-    border-bottom: var(--main-border-bottom)
+    border-bottom: var(--main-border-bottom);
+    transition: all 0.5s;
 }
 
 .btn{
@@ -178,6 +179,8 @@ label{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 3rem;
+    position: relative;
+    width: 100vw;
 }
 
 .header-logo{
@@ -257,7 +260,6 @@ label{
 
 .feature-item-image-con{
     height: 100%;
-    background-color: red;
 }
 
 .feature-item-image{
@@ -532,4 +534,22 @@ footer p span{
 .operation-btn-active{
     transform: translateY(-30%);
     transition: all 0.3s;
+}
+
+.sticky{
+    background-color: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    transition: all 0.3s;
+}
+
+.section-hidden{
+    opacity: 0;
+    transform: translateY(4rem);
+}
+
+.lazy-img{
+    filter: blur(10px);
 }
