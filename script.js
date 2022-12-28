@@ -178,7 +178,7 @@ const maxSlide = slides.length
 
 function goToSlide(currSlide){
     slides.forEach((slide, i)=>{
-        slide.style.transform = `translateX(${(i - currentSlide) * 100}%)`
+        slide.style.transform = `translateX(${(i - currSlide) * 100}%)`
     })
 }
 
@@ -186,23 +186,37 @@ function goToSlide(currSlide){
 goToSlide(0)
 
 //move slide to right
-slideRightBtn.addEventListener('click', ()=>{
+function toRight(){
     currentSlide == maxSlide -1 ? currentSlide = 0 : currentSlide++
-    goToSlide(currentSlide)
-})
+    goToSlide(currentSlide) 
+}
 
 //move slide to left
-slideLeftBtn.addEventListener('click',()=>{
+function toLeft(){
     currentSlide == 0 ? currentSlide = maxSlide -1 : currentSlide--
     goToSlide(currentSlide)
-})
+}
 
+//event listener to slide
+slideRightBtn.addEventListener('click', ()=>{
+    toRight()
+}) 
+
+slideLeftBtn.addEventListener('click',()=>{
+    toLeft()  
+})
 
 //dot for navigation
 dotsCon.addEventListener('click',(e)=>{
     if(e.target.classList.contains('dot')){
-        const slideNumber = e.target.dataset.slide
-        console.log(slideNumber)
-        goToSlide(slideNumber)        
+        const currSlideNumber = e.target.dataset.slide
+        console.log(currSlideNumber)
+        goToSlide(currSlideNumber)        
     }
+})
+
+//user right and left arrow key to slide
+document.addEventListener('keydown',(e)=>{
+    e.key === 'ArrowRight' && toLeft()
+    e.key === 'ArrowLeft' && toRight()
 })
