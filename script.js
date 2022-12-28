@@ -168,9 +168,13 @@ images.forEach((img)=>{
 
 
 //slider functionality
-slides.forEach((_,i)=>{
-    document.querySelector('.dots').insertAdjacentHTML('beforeend',`<button class="dot" data-slide="${i}"></button>`)
-})
+
+//createDot
+function createDot(){
+    slides.forEach((_,i)=>{
+        document.querySelector('.dots').insertAdjacentHTML('beforeend',`<button class="dot" data-slide="${i}"></button>`)
+    })
+}
 
 //translate each slide side by side
 let currentSlide = 0
@@ -182,20 +186,29 @@ function goToSlide(currSlide){
     })
 }
 
-//initial conditions
-goToSlide(0)
-
 //move slide to right
 function toRight(){
     currentSlide == maxSlide -1 ? currentSlide = 0 : currentSlide++
     goToSlide(currentSlide) 
+    activateDot(currentSlide)
 }
 
 //move slide to left
 function toLeft(){
     currentSlide == 0 ? currentSlide = maxSlide -1 : currentSlide--
     goToSlide(currentSlide)
+    activateDot(currentSlide)
 }
+
+// activate dot
+function activateDot(number){
+    document.querySelector(`.dot[data-slide="${number}"]`).classList.add('dot-active')
+}
+
+//initial conditions
+goToSlide(0)
+// activateDot(0)
+createDot(0)
 
 //event listener to slide
 slideRightBtn.addEventListener('click', ()=>{
@@ -206,12 +219,13 @@ slideLeftBtn.addEventListener('click',()=>{
     toLeft()  
 })
 
+
 //dot for navigation
 dotsCon.addEventListener('click',(e)=>{
     if(e.target.classList.contains('dot')){
         const currSlideNumber = e.target.dataset.slide
-        console.log(currSlideNumber)
-        goToSlide(currSlideNumber)        
+        goToSlide(currSlideNumber)    
+        activateDot(currSlideNumber)    
     }
 })
 
