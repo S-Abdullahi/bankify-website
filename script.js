@@ -154,7 +154,8 @@ function loading(entries, observer){
 
 const loadImageObserver = new IntersectionObserver(loading, {
     root: null,
-    threshold: 0
+    threshold: 0,
+    rootMargin: '200px'
 })
 
 images.forEach((img)=>{
