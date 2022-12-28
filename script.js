@@ -7,6 +7,10 @@ const operationTabsCon = document.querySelector('.operations-btn-con')
 const operationsTabs = document.querySelectorAll('.operations-btn')
 const operationContent = document.querySelectorAll('.operations-detail-con')
 const header = document.querySelector('.header')
+const slideRightBtn = document.querySelector('.slide-btn-right')
+const slideLeftBtn = document.querySelector('.slide-btn-left')
+const slides = document.querySelectorAll('.slide-detail')
+const dotsCon = document.querySelector('.dots')
 
 const modal = document.querySelector('.modal')
 const overlay = document.querySelector('.overlay')
@@ -160,4 +164,45 @@ const loadImageObserver = new IntersectionObserver(loading, {
 
 images.forEach((img)=>{
     loadImageObserver.observe(img)
+})
+
+
+//slider functionality
+slides.forEach((_,i)=>{
+    document.querySelector('.dots').insertAdjacentHTML('beforeend',`<button class="dot" data-slide="${i}"></button>`)
+})
+
+//translate each slide side by side
+let currentSlide = 0
+const maxSlide = slides.length
+
+function goToSlide(currSlide){
+    slides.forEach((slide, i)=>{
+        slide.style.transform = `translateX(${(i - currentSlide) * 100}%)`
+    })
+}
+
+//initial conditions
+goToSlide(0)
+
+//move slide to right
+slideRightBtn.addEventListener('click', ()=>{
+    currentSlide == maxSlide -1 ? currentSlide = 0 : currentSlide++
+    goToSlide(currentSlide)
+})
+
+//move slide to left
+slideLeftBtn.addEventListener('click',()=>{
+    currentSlide == 0 ? currentSlide = maxSlide -1 : currentSlide--
+    goToSlide(currentSlide)
+})
+
+
+//dot for navigation
+dotsCon.addEventListener('click',(e)=>{
+    if(e.target.classList.contains('dot')){
+        const slideNumber = e.target.dataset.slide
+        console.log(slideNumber)
+        goToSlide(slideNumber)        
+    }
 })
