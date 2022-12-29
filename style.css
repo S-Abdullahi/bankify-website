@@ -283,16 +283,11 @@ label{
     /* font-weight: 500; */
 }
 
-.feature-item-title{
-    /* margin-bottom: 0.7rem;
-    font-size: 1rem;
-    font-weight: 500; */
-}
-
 .feature-item-description{
-    line-height: 1.3rem;
-    font-size: 0.7rem;
-    color: var(--text-primary);
+    line-height: 2rem;
+    font-size: 1rem;
+    width: 70%;
+    color: #444;
     font-weight: 100;
 }
 
@@ -340,10 +335,6 @@ label{
     /* align-content: center; */
 }
 
-.operations-description-title{
-    /* font-size: 1.2rem;
-    margin-bottom: 1rem; */
-}
 
 .operations-btn-con{
     /* background-color: red; */
@@ -384,88 +375,6 @@ label{
     font-weight: 600;
 }
 
-/* TESTIMONIAL */
-/* .testimonial{
-    position: relative;
-    margin-bottom: 4rem;
-    height: 50rem;
-}
-.testimonial::before{
-    content: '\201C';
-    font-size: 9rem;
-    position: absolute;
-    top: 13.5rem;
-    left: 16rem;
-    color: var(--accent-color-light);
-} */
-
-.testimonial-detail-con{
-    /* display: grid;
-    grid-template-columns: 10% 80% 10%; */
-    /* align-items: center;
-    margin-top: -3rem; */
-    /* display: relative;
-    background-color: red; */
-}
-
-.testimonial-nav{
-    /* align-self: center; */
-    /* position: absolute;
-    top: 50%;
-    border: 0;
-    background-color: white;
-    padding: 1rem;
-    border-radius: 2rem;
-    font-weight: 600;
-    cursor: pointer; */
-}
-
-.testimonial-slide-con{
-    /* position: absolute;
-    width: 100%; */
-}
-
-.testimonial-detail{
-    /* background-color: green; */
-    /* display: flex;
-    flex-direction: column;
-    padding: 4rem; */
-    /* margin: 6rem; */
-    /* width: 100%; */
-    /* position: absolute; */
-}
-
-.testimonial-text{
-    /* font-size: 0.8rem;
-    color: #666; */
-}
-
-.testimonial-user-detail{
-    /* margin-top: 2rem; */
-    /* margin-left: 9rem; */
-    /* display: flex;
-    align-items: center; */
-}
-
-.testimonial-info{
-    /* margin-left:1rem; */
-}
-
-.testimonial-image{
-    /* height: 4rem;
-    width: 4rem;
-    border-radius: 50%; */
-}
-
-.testimonial-name{
-    /* font-size: 1rem;
-    font-weight: 400; */
-}
-.testimonial-location{
-    /* font-size: 0.7rem;
-    font-weight: 100;
-    color: #666; */
-}
 .testimonial{
     position: relative;
     height: 50rem;   

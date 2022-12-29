@@ -202,6 +202,10 @@ function toLeft(){
 
 // activate dot
 function activateDot(number){
+    document.querySelectorAll(`.dot`).forEach((dot)=>{
+        dot.classList.remove('dot-active')
+    })
+
     document.querySelector(`.dot[data-slide="${number}"]`).classList.add('dot-active')
 }
 
