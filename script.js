@@ -11,9 +11,12 @@ const slideRightBtn = document.querySelector('.slide-btn-right')
 const slideLeftBtn = document.querySelector('.slide-btn-left')
 const slides = document.querySelectorAll('.slide-detail')
 const dotsCon = document.querySelector('.dots')
+const openIcon = document.querySelector('.open')
+const closeIcon = document.querySelector('.close')
 
 const modal = document.querySelector('.modal')
 const overlay = document.querySelector('.overlay')
+const headerNav = document.querySelector('.header-nav')
 
 mainBtn.addEventListener('click',()=>{
     feature.scrollIntoView({behavior:'smooth'})
@@ -29,6 +32,7 @@ function toCloseModal(){
 openAccount.addEventListener('click',()=>{
     modal.classList.remove('hidden')
     overlay.classList.remove('hidden')
+    openCloseMenu(100)
 })
 
 //close modal event handler
@@ -52,6 +56,8 @@ document.querySelector('.header-list').addEventListener('click', (e)=>{
         e.preventDefault()
         const id = e.target.getAttribute('href')
         document.querySelector(id).scrollIntoView({behavior: 'smooth'})
+        headerNav.classList.add('hide-navbar')
+        openCloseMenu(100)
     }
 })
 
@@ -81,7 +87,9 @@ function handleHoverEffect(e, opacity){
         const logo = link.closest('.header').querySelector('img')
 
         siblings.forEach((item)=>{
-            if(item !== link) item.style.opacity = opacity
+            if(item !== link) {
+                item.style.opacity = opacity
+            }
         })
         logo.style.opacity = opacity
     }
@@ -237,4 +245,24 @@ dotsCon.addEventListener('click',(e)=>{
 document.addEventListener('keydown',(e)=>{
     e.key === 'ArrowRight' && toLeft()
     e.key === 'ArrowLeft' && toRight()
+})
+
+//menubar for mobile
+
+function openCloseMenu(value){
+    headerNav.style.transform = `translateX(${value}%)`
+    closeIcon.style.transform = `translateY(${value}rem)`
+}
+openIcon.addEventListener('click',(e)=>{
+    e.preventDefault()
+    openCloseMenu(0)
+    headerNav.classList.remove('hide-navbar')
+})
+
+closeIcon.addEventListener('click',()=>{
+    openCloseMenu(100)
+})
+
+navCon.addEventListener('click',()=>{
+    
 })

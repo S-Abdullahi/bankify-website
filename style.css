@@ -194,6 +194,10 @@ label{
     font-size: 1rem;
 }
 
+.nav{
+    position: relative;
+}
+
 .nav-item{
     list-style-type: none;
 }
@@ -203,11 +207,26 @@ label{
     color: var(--text-primary);
 }
 
+/* menu icon */
+.menu-icon{
+    font-size: 2rem;
+    position: absolute;
+    top: 2rem;
+    right: 6rem;
+    cursor: pointer;
+}
+.close{
+    transform: translateY(-5rem);
+    z-index: 200;
+}
+
 /******MAIN******/
 .main{
     height: 90vh;
     display: flex;
-    padding: 4rem 10rem;
+    padding: 4rem 10% 4rem 10%;
+    display: grid;
+    grid-template-columns: 50% 50%;
     justify-content: space-between;
     align-items: center;
     color: var(--text-primary);
@@ -242,22 +261,22 @@ label{
 
 .main-image-con{
     height: 75%;
-    width: 50%;
+    width: 80%;
 }
 .main-image{
-    height:100%;
+    width:100%;
 }
 
 .feature-item{
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
-    margin-bottom: 6rem;
-    height: 40vh;
+    /* margin-bottom: 6rem; */
+    /* height: 40vh; */
 }
 
 .feature-item-image-con{
-    height: 100%;
+    width: 100%;
 }
 
 .feature-item-image{
@@ -267,7 +286,7 @@ label{
 }
 
 .feature-item-detail{
-    padding: 4rem;
+    padding: 4rem 2rem;
     color: var(--text-primary);
 }
 
@@ -285,7 +304,7 @@ label{
 .feature-item-description{
     line-height: 2rem;
     font-size: 1rem;
-    width: 70%;
+    width: 100%;
     color: #444;
     font-weight: 100;
 }
@@ -376,7 +395,7 @@ label{
 
 .testimonial{
     position: relative;
-    height: 50rem;   
+    /* height: 50rem;    */
 }
 
 .testimonial::before{
@@ -389,10 +408,10 @@ label{
 }
 
 .testimonial-detail-con{
-    /* background-color: green; */
-    height: 20rem;
-    width: 70%;
-    margin: 10rem auto 20rem auto;
+    /* background-color: red; */
+    overflow: hidden;
+    height: 25rem;
+    margin: 10rem auto 0 auto;
     position: relative;
     padding: 2rem 8rem;
 }
@@ -404,13 +423,14 @@ label{
 }
 
 .slide-con{
-    position: relative;
-    height: 100%;
-    overflow: hidden;
+    /* background-color: red; */
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* background-color: red; */
 }
 
 .slide-detail{
-    position: absolute;
+    position:absolute;
     transition: transform 0.5s;
 }
 
@@ -421,6 +441,7 @@ label{
 blockquote{
     font-size: 1.2rem;
     font-weight: 100;
+    margin-right: 10%;
     color: #666;
 }
 
@@ -458,13 +479,13 @@ blockquote{
 }
 
 .slide-btn-right{
-    right: 2rem;
+    right: 1rem;
 }
 /* DOT */
 .dots{
     position: absolute;
     left: 50%;
-    bottom: -4rem;
+    bottom: -2rem;
 }
 .dot{
     height: 0.8rem;
@@ -575,4 +596,125 @@ footer p span{
 
 .lazy-img{
     filter: blur(10px);
+}
+
+.hide-navbar{
+    display: none;
+    transition: all 0.3s;
+}
+
+/* MEDIA QUERIES*/
+@media only screen and (max-width: 600px){
+    body{
+        font-size: 50%;
+    }
+
+    /* mobile navigation */
+    header nav{
+        background-color: white;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(100%);
+        overflow: hidden;
+        transition: transform 0.5s;
+    }
+
+    .header-nav ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* general fonts */
+    h3{
+        font-size: 1.3rem;
+    }
+
+    /* form modal */
+    .modal{
+        width: 90%;
+    }
+
+    .main{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .main-heading{
+        font-size: 2.5rem;
+    }
+
+    .main-paragraph{
+        font-size: 1.1rem;
+    }
+
+    /* general section */
+    section{
+        padding: 4rem 1rem;
+    }
+
+    .grow{
+        order: 0;
+    }
+
+    /* feature section */
+    .feature-item{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .feature-icon{
+        border-radius: 50rem;
+    }
+
+    /* operation section */
+    .operations-detail{
+        padding: 4rem 4rem;
+    }
+    .operations-detail-active{
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .operations-description-con{
+        margin: 2rem 0;
+        padding: 0;
+    }
+
+    .operations-btn-con{
+        width: 100%;
+    }
+
+    .operations-btn{
+        padding: 0.7rem 0.5rem;
+    }
+
+    /* call to action */
+    .toaction{
+        padding: 4rem 2rem;
+    }
+
+    .toaction p{
+        font-size: 1.8rem;
+    }
+
+    footer ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media screen and (min-width:600px) {
+    .menu-icon{
+        display: none;
+    }
 }
