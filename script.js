@@ -56,7 +56,6 @@ document.querySelector('.header-list').addEventListener('click', (e)=>{
         e.preventDefault()
         const id = e.target.getAttribute('href')
         document.querySelector(id).scrollIntoView({behavior: 'smooth'})
-        headerNav.classList.add('hide-navbar')
         openCloseMenu(100)
     }
 })
@@ -103,14 +102,6 @@ navCon.addEventListener('mouseout', function(e){
     handleHoverEffect(e,1)
 })
 
-//sticky header
-// const stickyStart = feature.getBoundingClientRect()
-// window.addEventListener('scroll',()=>{
-//     if(scrollY > stickyStart.top){header.classList.add('sticky')} 
-//     else{
-//         header.classList.remove('sticky')
-//     }
-// })
 const main = document.querySelector('.main')
 const headerHeight = header.getBoundingClientRect().height
 const stickyNav = function(entries){
@@ -248,15 +239,13 @@ document.addEventListener('keydown',(e)=>{
 })
 
 //menubar for mobile
-
 function openCloseMenu(value){
     headerNav.style.transform = `translateX(${value}%)`
     closeIcon.style.transform = `translateY(${value}rem)`
 }
 openIcon.addEventListener('click',(e)=>{
-    e.preventDefault()
     openCloseMenu(0)
-    headerNav.classList.remove('hide-navbar')
+    // headerNav.classList.remove('hidden')
 })
 
 closeIcon.addEventListener('click',()=>{

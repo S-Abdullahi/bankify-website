@@ -214,6 +214,7 @@ label{
     top: 2rem;
     right: 6rem;
     cursor: pointer;
+    display: none;
 }
 .close{
     transform: translateY(-5rem);
@@ -271,8 +272,6 @@ label{
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
-    /* margin-bottom: 6rem; */
-    /* height: 40vh; */
 }
 
 .feature-item-image-con{
@@ -423,10 +422,6 @@ label{
 }
 
 .slide-con{
-    /* background-color: red; */
-    /* position: relative; */
-    /* overflow: hidden; */
-    /* background-color: red; */
 }
 
 .slide-detail{
@@ -495,9 +490,6 @@ blockquote{
     background-color: rgb(231, 220, 220);
     margin: 3rem 0.5rem;
     cursor: pointer;
-    /* position: absolute;
-    left: 50%;
-    bottom: 0; */
 }
 
 .dot-active{
@@ -566,7 +558,7 @@ footer p span{
 }
 
 /* dom manipulation */
-.hidden{
+.hidden, .menu-hidden{
     visibility: hidden;
     opacity: 0;
 }
@@ -598,13 +590,17 @@ footer p span{
     filter: blur(10px);
 }
 
-.hide-navbar{
+.open{
     display: none;
-    transition: all 0.3s;
 }
 
 /* MEDIA QUERIES*/
 @media only screen and (max-width: 600px){
+    .menu-hidden{
+    opacity: 1;
+    visibility: visible;
+    }
+
     body{
         font-size: 50%;
     }
@@ -635,6 +631,10 @@ footer p span{
     /* general fonts */
     h3{
         font-size: 1.3rem;
+    }
+
+    .menu-icon{
+        display: block;
     }
 
     /* form modal */
@@ -713,8 +713,3 @@ footer p span{
 }
 
 
-@media screen and (min-width:600px) {
-    .menu-icon{
-        display: none;
-    }
-}
